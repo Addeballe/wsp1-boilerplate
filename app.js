@@ -25,14 +25,24 @@ app.use(express.static("public"))
 
 app.use("/", indexRouter)
 
-app.use((req, res, next) => {
-    res.status(404).send("Sidan kunde inte hittas.")
-})
-
 app.use((err, req, res, next) => {
     console.error(err.stack)
     const message = isProduction ? "Serverfel." : `Serverfel: ${err.message}`
     res.status(500).send(message)
+})
+
+app.use((req, res, next) => {
+    res.status(404).render("404.njk", {
+        title: "Sidan hittades inte"
+    })
+})
+
+app.use((err, req, res, next) => {
+    console.error(err.stack)
+    res.status(500).render("500.njk", {
+        title: "Ett fel uppstod",
+        error: process.env.NODE_ENV === "development" ? err.message : ""
+    })
 })
 
 export { app, port }
