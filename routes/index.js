@@ -1,4 +1,5 @@
 import express from "express"
+import pool from "../config/db.js"
 
 const router = express.Router()
 
@@ -10,6 +11,11 @@ router.get("/", (req, res) => {
 
 router.get('/error', (req, res) => {
     throw new Error('Test error')
+})
+
+router.get("/bread", async (req, res) => {
+    const [rows] = await pool.query(`select * from loaf`)
+    res.render("breads.njk", { breadtypes: rows} )
 })
 
 export default router

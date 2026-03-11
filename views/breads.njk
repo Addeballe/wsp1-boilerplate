@@ -1,0 +1,10 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<h1>test</h1>
+<ul class="breadlist">
+{% for bread in breadtypes %}
+    <li class="breaditems">{{ bread.id }} {{ bread.breadname}} {{ bread.rating }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
