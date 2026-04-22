@@ -18,4 +18,18 @@ router.get("/bread", async (req, res) => {
     res.render("breads.njk", { breadtypes: rows} )
 })
 
+router.get("/routertest", (req, res) => {
+    console.log(req)
+    res.render("test.njk", {
+        message: "hej"
+    })
+})
+
+router.get("/routertest", (req, res) => {
+    console.log(req)
+    res.render("test.njk", {
+        message: "hej"
+    })
+})
+
 export default router

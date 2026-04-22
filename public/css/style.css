@@ -4,3 +4,38 @@ body {
   margin: 0;
 }
 
+header {
+  padding-top: 0;
+  margin-top: 0;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.icon h1 {
+  background-color: white;
+  border-radius: 25px;
+  color: black;
+  margin: 50pxa;
+}
+
+.button-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 300%;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  border: 1px solid black;
+  text-decoration: none;
+  list-style-type: none;
+}

@@ -1,0 +1,12 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+{{ message}}
+
+<from action="/posttest" method="post">
+    <input type="text" name="message">
+    <button type="submit">Skicka</button>    
+</from>
+
+{% endblock %}
